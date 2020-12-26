@@ -20,21 +20,8 @@ int main()
     appendNode(Head3, "Hosam3", 3, 1000.5264);
 
 
-    delNode(&Head1,0);
-
-    delNode(&Head2,1);
-    delNode(&Head3,2);
-
+    delList(&Head1);
     printList(Head1);
-
-    printf("_______________________________________________\n");
-
-
-    printList(Head2);
-
-    printf("_______________________________________________\n");
-
-    printList(Head3);
 
 
     return 0;

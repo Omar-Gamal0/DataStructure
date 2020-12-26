@@ -16,7 +16,7 @@ void appendNode(Node_t * Head, char *name, int id, float degree);
 void printList(Node_t * Head);
 void printNode(Node_t * Head, int id);
 void delNode(Node_t ** Head, int id);
-
+void delList(Node_t ** Head);
 
 
 #endif // _LINKED_LIST_H

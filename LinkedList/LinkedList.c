@@ -147,4 +147,19 @@ void delNode(Node_t ** Head, int id)
     }
 }
 
+void delList(Node_t ** Head)
+{
 
+    Node_t * Temp = *Head;;
+
+    while(Temp->Next != NULL)
+    {
+
+        *Head = Temp -> Next;
+        free(Temp);
+        Temp = *Head;
+
+    }
+    *Head = Temp -> Next;
+    free(Temp);
+}
