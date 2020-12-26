@@ -20,8 +20,10 @@ int main()
     appendNode(Head3, "Hosam3", 3, 1000.5264);
 
 
+    printNode(Head1,0);
+    printf("\n________________________________\n");
     delList(&Head1);
-    printList(Head1);
+    printList(Head2);
 
 
     return 0;

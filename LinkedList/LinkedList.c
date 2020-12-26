@@ -70,16 +70,15 @@ void appendNode(Node_t * Head, char *name, int id, float degree)
 void printList(Node_t * Head)
 {
     Node_t Temp = *Head;
-    while(1){
+    while(Temp.Next != NULL)
+    {
 
-    printf("Student Name: %s\nStudent ID: %d\nStudent Degree: %.2f\n\n", Temp.Name, Temp.Id, Temp.Degree);
-    Temp = *(Temp.Next);
+        printf("Student Name: %s\nStudent ID: %d\nStudent Degree: %.2f\n\n", Temp.Name, Temp.Id, Temp.Degree);
+        Temp = *(Temp.Next);
 
-    if(Temp.Next == NULL)
-        break;
     }
 
-    //printf("Student Name: %s\nStudent ID: %d\nStudent Degree: %.2f\n\n", Temp.Name, Temp.Id, Temp.Degree);
+    printf("Student Name: %s\nStudent ID: %d\nStudent Degree: %.2f\n\n", Temp.Name, Temp.Id, Temp.Degree);
 
 }
 
@@ -89,7 +88,7 @@ void printNode(Node_t * Head, int id)
     Node_t Temp = *Head;
 
     char Found = 0;
-    while(Temp.Next != NULL)
+    while(Temp.Id != NULL)
     {
         if(Temp.Id == id)
         {
@@ -99,9 +98,9 @@ void printNode(Node_t * Head, int id)
         Temp = *Temp.Next;
     }
 
-    if((Found) || (Temp.Id == id))
+    if((Found)||(Temp.Id==id))
     {
-        printf("Student Name: %s\nStudent ID: %d\nStudent Degree: %.2f", Temp.Name, Temp.Id, Temp.Degree);
+        printf("Student Name: %s\nStudent ID: %d\nStudent Degree: %.2f\n", Temp.Name, Temp.Id, Temp.Degree);
     }
     else
     {
@@ -132,7 +131,7 @@ void delNode(Node_t ** Head, int id)
         Temp = Temp->Next;
     }
 
-    if((Found) || (Temp->Id == id))
+    if((Found)||(Temp->Id==id))
     {
         Node_t * Temp1 = Temp->Next;
         Temp -> Next = ((Temp->Next) -> Next );
@@ -152,7 +151,7 @@ void delList(Node_t ** Head)
 
     Node_t * Temp = *Head;;
 
-    while(Temp->Next != NULL)
+    while(Temp != NULL)
     {
 
         *Head = Temp -> Next;
@@ -160,6 +159,6 @@ void delList(Node_t ** Head)
         Temp = *Head;
 
     }
-    *Head = Temp -> Next;
-    free(Temp);
+    //*Head = Temp -> Next;
+    //free(*Head);
 }
