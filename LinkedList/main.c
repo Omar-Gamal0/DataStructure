@@ -6,17 +6,17 @@ int main()
 {
     Node_t * Head1 = CreatList("Omar1", 1, 995.25656);
     appendNode(Head1, "Omar2", 2, 1000.5562);
-    insertNode(&Head1, "Omar0", 0, 995.25656);
+    prependNode(&Head1, "Omar0", 0, 995.25656);
     appendNode(Head1, "Omar3", 3, 1000.5264);
 
     Node_t * Head2 = CreatList("Ahmed1", 1, 995.25656);
     appendNode(Head2, "Ahmed2", 2, 1000.5562);
-    insertNode(&Head2, "Ahmed0", 0, 995.25656);
+    prependNode(&Head2, "Ahmed0", 0, 995.25656);
     appendNode(Head2, "Ahmed3", 3, 1000.5264);
 
     Node_t * Head3 = CreatList("Hosam1", 1, 995.25656);
     appendNode(Head3, "Hosam2", 2, 1000.5562);
-    insertNode(&Head3, "Hosam0", 0, 995.25656);
+    prependNode(&Head3, "Hosam0", 0, 995.25656);
     appendNode(Head3, "Hosam3", 3, 1000.5264);
 
 

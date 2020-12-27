@@ -9,31 +9,21 @@ Node_t * CreatList(char * name, int id, float degree)
 
     Head->Id = id;
     Head->Degree = degree;
-    char index = 0;
-    while(name[index] != '\0')
-    {
-        Head->Name[index] = name[index];
-        index++;
-    }
+    StringCopy(Head -> Name, name);
 
     Head->Next = NULL;
     return Head;
 }
 
 
-void insertNode(Node_t ** Head, char * name, int id, float degree)
+void prependNode(Node_t ** Head, char * name, int id, float degree)
 {
 
     Node_t * Node = (Node_t *) malloc(sizeof(Node_t));
 
     Node -> Id = id;
     Node -> Degree = degree;
-    char index = 0;
-    while(name[index] != '\0')
-    {
-        Node->Name[index] = name[index];
-        index++;
-    }
+    StringCopy(Node -> Name, name);
 
     Node -> Next = *Head;
     *Head = Node;
@@ -45,15 +35,10 @@ void appendNode(Node_t * Head, char *name, int id, float degree)
 {
     Node_t * Temp = Head;
     Node_t * Node = (Node_t *) malloc(sizeof(Node_t));
+
     Node->Id = id;
     Node->Degree = degree;
-
-    char index = 0;
-    while(name[index] != '\0')
-    {
-        Node->Name[index] = name[index];
-        index++;
-    }
+    StringCopy(Node -> Name, name);
 
     while(Temp -> Next != NULL){
 
@@ -161,4 +146,14 @@ void delList(Node_t ** Head)
     }
     //*Head = Temp -> Next;
     //free(*Head);
+}
+
+void StringCopy(char * Str1, char * Str2)
+{
+    char index = 0;
+    while(Str2[index] != '\0')
+    {
+        Str1[index] = Str2[index];
+        index++;
+    }
 }
